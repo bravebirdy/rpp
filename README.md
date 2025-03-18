@@ -21,15 +21,15 @@ To install RPP, follow these steps:
    ```
 3. Install the required dependencies:
    ```bash
-   npm install
+   pip install -r requirements.txt
    ```
 
 ## Usage
 To use RPP, run the following command in your terminal:
 ```bash
-node index.js <path_to_pdf>
+python main.py <input_pdf> <output_pdf> <password>
 ```
-Replace `<path_to_pdf>` with the path to the PDF file you want to unlock.
+Replace `<input_pdf>` with the path to the PDF file you want to unlock, `<output_pdf>` with the desired output file name, and `<password>` with the password for the PDF.
 
 ## Contributing
 We welcome contributions! Please follow these steps to contribute:

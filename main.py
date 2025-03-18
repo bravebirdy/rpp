@@ -1,4 +1,5 @@
 import PyPDF2
+import argparse  # Import argparse for command-line argument parsing
 
 
 def remove_pdf_password(input_pdf, output_pdf, password):
@@ -28,7 +29,18 @@ def remove_pdf_password(input_pdf, output_pdf, password):
 
 
 if __name__ == "__main__":
-    # Example usage
-    remove_pdf_password(
-        'pdf-with-password.pdf', 'pdf-without-password.pdf', 'my_password'
-    )
+    # Set up argument parsing
+    parser = argparse.ArgumentParser(
+        description='Remove password from a PDF file.')
+    parser.add_argument('input_pdf', type=str,
+                        help='Path to the input PDF file')
+    parser.add_argument('output_pdf', type=str,
+                        help='Path to the output PDF file')
+    parser.add_argument('password', type=str,
+                        help='Password for the input PDF file')
+
+    # Parse the command-line arguments
+    args = parser.parse_args()
+
+    # Call the function with the provided arguments
+    remove_pdf_password(args.input_pdf, args.output_pdf, args.password)
